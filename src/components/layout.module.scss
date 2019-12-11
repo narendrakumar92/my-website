@@ -1,0 +1,17 @@
+.container {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 1rem;
+}
+
+.leftsidebar {
+	display: table-cell;
+	width: 15%;
+	vertical-align: top;
+}
+
+.content {
+    display: table-cell;
+	width: 85%;
+	vertical-align: top;
+}
