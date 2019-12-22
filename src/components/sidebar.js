@@ -1,7 +1,57 @@
 import React from "react"
-export default () => (
-    <aside style={{marginTop: `3.2rem`, padding: `10px `}}>
-        <h3> Sidebar</h3>
-        <p> hooray</p>
+import { Link, graphql, useStaticQuery, withPrefix } from 'gatsby'
+import sidebarStyles from './sidebar.module.scss'
+const Sidebar = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        site {
+          siteMetadata {
+            authorMetadata {
+              name,
+              photo,
+              bio,
+              contacts {
+                  linkedin
+              }
+            }
+          }
+        }
+      }
+    `)
+    const author = data.site.siteMetadata.authorMetadata;
+    return (
+    <aside style={{ padding: `10px`}}>
+        <Link to='/'>
+            <img  className={sidebarStyles.authorimg} src={withPrefix(author.photo)}
+            alt={author.name}
+            />
+        </Link>
+        <h2 className={sidebarStyles.authorname}>
+          <a href={author.contacts.linkedin} target="_blank">
+          {author.name} </a>
+        </h2>
+        
+        <p className={sidebarStyles.authorabout} dangerouslySetInnerHTML={{ __html: author.bio }}>            
+        </p>
+        
+        <nav>
+        <ul className={sidebarStyles.navList}>
+          <li>
+            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/'>Home</Link>
+          </li>
+          <li>
+            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/blog'>Blog</Link>
+          </li>
+          <li>
+            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/about'>About</Link>
+          </li>
+          <li>
+            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/contact'>Contact</Link>
+          </li>
+        </ul>
+      </nav>
     </aside>
-)
+    )
+}
+
+export default Sidebar

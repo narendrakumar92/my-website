@@ -1,7 +1,20 @@
 module.exports = {
   siteMetadata: {
     title: 'Welcome',
-    author: 'Narendra'
+    subtitle: 'SWE @ Oracle Cloud. MS CS @ ASU, B.Tech @ CEG - Anna University.',
+    author: 'Narendra kumar',
+    authorMetadata: {
+      name: 'Narendra kumar',
+      photo: '/photo.jpg',
+      bio: 'SWE @ Oracle Cloud. MS CS @ ASU, B.Tech @ CEG - Anna University.',
+      contacts: {
+        email: 'nsampat1@asu.edu',
+        linkedin: 'https://www.linkedin.com/in/narendrakumar92/',
+        twitter: 'narendnk',
+        github: 'narenfalcao'
+      }
+    }
+    
   },
   plugins: [
     'gatsby-plugin-sass',
