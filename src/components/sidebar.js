@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql, useStaticQuery, withPrefix } from 'gatsby'
 import sidebarStyles from './sidebar.module.scss'
+import Footer from './footer'
+import { SocialIcon } from 'react-social-icons';
 const Sidebar = () => {
     const data = useStaticQuery(graphql`
     query {
@@ -50,7 +52,10 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
+    
+    <Footer></Footer>
     </aside>
+    
     )
 }
 

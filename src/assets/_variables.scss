@@ -1,2 +1,11 @@
 // Colors
 $color-base: #222;
+$color-gray: lighten($color-base, 35%);
+
+// Typographic
+$typographic-small-font-size: 14px;
+
+// Layout
+$layout-breakpoint-sm: 685px;
+$layout-breakpoint-md: 960px;
+$layout-breakpoint-lg: 1100px;

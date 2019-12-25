@@ -8,7 +8,6 @@ const Layout = (props) => {
     return (
         
         <div className={layoutStyles.container}>
-            <Header />
             <main style={{width: `70%`, float: `left`}}>
             <div className={layoutStyles.content}>
             {props.children}

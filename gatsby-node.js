@@ -8,17 +8,6 @@ const path = require('path')
 
 // You can delete this file if you're not using it
 
-module.exports.onCreateNode = ({node, actions}) => {
-    const { createNodeField } = actions //its a function
-    if(node.internal.type === 'MarkdownRemark') {
-        const slug = path.basename(node.fileAbsolutePath, '.md')
-        createNodeField({
-            node,
-            name: 'slug',
-            value: slug
-        })
-    }
-}
 
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -26,24 +15,22 @@ module.exports.createPages = async ({ graphql, actions }) => {
     //1. get path to template 2. get markdown data 3. create new pages
     const res = await graphql(`
         query {
-            allMarkdownRemark {
+            allContentfulBlogPost {
                 edges {
                     node {
-                        fields {
-                            slug
-                        }
+                        slug
                     }
                 }
             }
         }
     `)
     // async await , it gets every node from the edges and wait for the promise from the function
-    res.data.allMarkdownRemark.edges.forEach((edge) => {
+    res.data.allContentfulBlogPost.edges.forEach((edge) => {
         createPage({
             component: blogTemplate,
-            path: `/blog/${edge.node.fields.slug}`,
+            path: `/blog/${edge.node.slug}`,
             context: { //what you wanna pass it to the template blog.js
-                slug: edge.node.fields.slug
+                slug: edge.node.slug
             }
         })
     })
