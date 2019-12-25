@@ -8,13 +8,18 @@ const Layout = (props) => {
     return (
         
         <div className={layoutStyles.container}>
+            <div className={layoutStyles.mobileonly}>
+                <Header/>
+            </div>
             <main style={{width: `70%`, float: `left`}}>
             <div className={layoutStyles.content}>
             {props.children}
             </div>
             </main>
             <div className={layoutStyles.leftsidebar}>
-            <Sidebar />
+                <div className={layoutStyles.desktoponly}>
+                    <Sidebar />
+                </div>
             </div>
             
         </div>

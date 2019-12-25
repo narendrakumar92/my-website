@@ -9,8 +9,7 @@ const IndexPage = () => {
       <Layout>
       <Head title="Home"/>
         <h1>Hello!</h1>
-        <h2>I'm Naren, Software Engineer currently working at Oracle Cloud, Seattle</h2>
-        <p> The blog site is under construction <Link to='/contact'> Contact me.</Link></p>
+        <p>I'm a Software Engineer with 3 years of experience. I studied Masters in Computer Science at Arizona State University (2016-2018), and I've been a Software Engineer at Oracle Cloud since July 2018. I like building Scalable and Distributed Applications.</p>
       </Layout>
     </div>
   )
