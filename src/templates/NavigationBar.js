@@ -7,10 +7,7 @@ const NavigationBar = () => {
                 <nav>
                     <ul className={NavigationStyle.navList}>
                         <li>
-                            <Link className={NavigationStyle.navItem} activeClassName={NavigationStyle.activeNavItem} to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link className={NavigationStyle.navItem} activeClassName={NavigationStyle.activeNavItem} to='/blog'>Blog</Link>
+                            <Link className={NavigationStyle.navItem} activeClassName={NavigationStyle.activeNavItem} to='/'>Blog</Link>
                         </li>
                         <li>
                             <Link className={NavigationStyle.navItem} activeClassName={NavigationStyle.activeNavItem} to='/about'>About</Link>

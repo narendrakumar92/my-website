@@ -11,7 +11,7 @@ const Layout = (props) => {
             <div className={layoutStyles.mobileonly}>
                 <Header/>
             </div>
-            <main style={{width: `70%`, float: `left`}}>
+            <main>
             <div className={layoutStyles.content}>
             {props.children}
             </div>

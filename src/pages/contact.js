@@ -7,7 +7,7 @@ const ContactPage = () => {
             <Layout>
                 <Head title='Contact'/>
                 <h1> Contact</h1>
-                <h2> the best way to reach me is via </h2>
+                <p> The best way to reach me is through email at nsampat1@asu.edu</p>
             </Layout>
         </div>
     )

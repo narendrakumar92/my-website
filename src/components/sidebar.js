@@ -39,10 +39,7 @@ const Sidebar = () => {
         <nav>
         <ul className={sidebarStyles.navList}>
           <li>
-            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/'>Home</Link>
-          </li>
-          <li>
-            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/blog'>Blog</Link>
+            <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/'>Blog</Link>
           </li>
           <li>
             <Link className={sidebarStyles.navItem} activeClassName={sidebarStyles.activeNavItem} to='/about'>About</Link>
